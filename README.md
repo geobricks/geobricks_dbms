@@ -57,3 +57,12 @@ Once the connection has been estabilished it is possible to query the DB. The ``
 for row in my_db.select_all('tasks'):
     print row
 ```
+To insert a new item in the DB you will have to specify the table name and provide a ```Dict``` where the keys represents the column names and the values are the values to be stored in the DB. As istance the following code:
+```python
+my_db.insert({'year': '2014', 'month': '11'}, 'tasks')
+```
+add the following record in the _tasks_ table:
+|year|month|day|hour|second|
+|----|-----|---|----|------|
+|2014|11||||
+Only the fields specified in the ```Dict``` have been stored in the _tasks_ table.
