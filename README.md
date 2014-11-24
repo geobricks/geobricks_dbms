@@ -15,9 +15,10 @@ Examples
 ========
 The main class is ```DBMS``` contained in ```dbms_core.py```. The initialization method of such class accepts the following arguments:
 
-|Name|Value|Default|Example|
+|Name|Description|Default|Example|
 |----|-----|-------|-------|
-|```db_type```||||
+|```db_type```|DB connector to use||```mongodb``` or ```postgresql```|
+|```db_name```|Name of the DB||my_db|
 
 MongoDB
 -------
