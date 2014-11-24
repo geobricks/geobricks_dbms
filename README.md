@@ -62,7 +62,9 @@ To insert a new item in the DB you will have to specify the table name and provi
 my_db.insert({'year': '2014', 'month': '11'}, 'tasks')
 ```
 add the following record in the _tasks_ table:
+
 |year|month|day|hour|second|
 |----|-----|---|----|------|
 |2014|11||||
+
 Only the fields specified in the ```Dict``` have been stored in the _tasks_ table.
