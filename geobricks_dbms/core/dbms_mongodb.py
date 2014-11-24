@@ -31,20 +31,11 @@ class DBMSMongoDB():
         self.db = self.client[self.db_name]
         self.collection = self.db[self.collection_name]
 
-    def insert(self, post):
-        print self.collection.insert(post)
+    def insert(self, item):
+        return self.collection.insert(item)
 
     def find(self):
         return self.collection.find()
 
     def find_by_id(self, item_id):
         return self.collection.find({"_id": ObjectId(item_id)})
-
-
-mydb = DBMSMongoDB('test', 'posts')
-mydb.insert({"pippo": "pluto"})
-for post in mydb.find():
-    print post
-print
-for post in mydb.find_by_id('54730665f8cd671e687311e8'):
-    print post
