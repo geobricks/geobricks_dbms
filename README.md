@@ -48,3 +48,12 @@ print new_id
 
 PostgreSQL
 ----------
+The example below shows how to connect to the _geobricks_ data source:
+```python
+my_db = DBMS('postgresql', 'geobricks', 'my_username', 'my_password')
+```
+Once the connection has been estabilished it is possible to query the DB. The ```select_all``` method retrieves all the items of the collection, and takes the table name as argument:
+```python
+for row in my_db.select_all('tasks'):
+    print row
+```
