@@ -19,6 +19,11 @@ The main class is ```DBMS``` contained in ```dbms_core.py```. The initialization
 |----|-----|-------|-------|
 |```db_type```|DB connector to use||```mongodb``` or ```postgresql```|
 |```db_name```|Name of the DB||my_db|
+|```username```|Username to access the DB|```None```|my_username|
+|```password```|Password to access the DB|```None```|my_password|
+|```collection_name```|Name of the collection (MongoDB only)|```None```|my_collection|
+
+Once initialized the ```DBMS``` class provides a set of CRUD methods as discussed in the following sections.
 
 MongoDB
 -------
