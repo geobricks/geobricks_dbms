@@ -95,7 +95,7 @@ These are the required field to configure a PostgreSQL default datasource:
 |```password```|Password for the connection|```my_password```|
 
 Following an example for the configuration of a MongoDB default datasource:
-```python```
+```python
 config = {
     "default_datasource": {
         "vendor": "mongodb",
