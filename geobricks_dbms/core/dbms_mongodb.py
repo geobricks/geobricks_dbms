@@ -1,7 +1,6 @@
-import json
 from bson.json_util import dumps
-from pymongo import MongoClient
 from bson.objectid import ObjectId
+from pymongo import MongoClient
 
 
 class DBMSMongoDB():
