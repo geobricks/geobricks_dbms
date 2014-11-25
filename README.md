@@ -116,6 +116,7 @@ The default datasource provides the details for a DB containing all the availabl
 
 |Field Name|Field Description|Example|Notes|
 |----------|-----------------|-------|-----|
+|```id```|Record ID|```123456```||
 |```datasource```|Unique identifier|```test_db```||
 |```vendor```|DB vendor|```postgresql```||
 |```db_name```|Name of the DB for the connection|```my_db```||
