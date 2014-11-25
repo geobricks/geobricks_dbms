@@ -11,7 +11,7 @@ setup(
     long_description=open('README.md').read(),
     description='Geobricks DB Management System.',
     install_requires=[
-        'pymongo'
+        'pymongo', 'flask'
     ],
     url='http://pypi.python.org/pypi/GeobricksDBMS/'
 )

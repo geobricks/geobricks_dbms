@@ -1,0 +1,15 @@
+[
+  {
+    "datasource": "test_postgresql",
+    "vendor": "postgresql",
+    "db_name": "geobricks",
+    "username": "postgres",
+    "password": "Ce09114238"
+  },
+  {
+    "datasource": "test_mongodb",
+    "vendor": "mongodb",
+    "db_name": "test",
+    "collection": "posts"
+  }
+]
