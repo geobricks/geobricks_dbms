@@ -88,7 +88,7 @@ These are the required field to configure a PostgreSQL default datasource:
 
 |Field Name|Field Description|Example|
 |----------|-----------------|-------|
-|````vendor```|Database vendor|```postgresql```|
+|```vendor```|Database vendor|```postgresql```|
 |```db_name```|Name of the DB for the connection|```my_db```|
 |```table_name```|Name of the table containing the default datasources|```datasources```|
 |```username```|Username for the connection|```my_username```|
@@ -109,7 +109,7 @@ The following are the required parameters:
 
 |Field Name|Field Description|Example|
 |----------|-----------------|-------|
-|````vendor```|Database vendor|```postgresql```|
+|```vendor```|Database vendor|```postgresql```|
 |```db_name```|Name of the DB for the connection|```my_db```|
 |```collection```|Name of the table collection containing the default datasources|```datasources```|
 
