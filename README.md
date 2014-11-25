@@ -17,8 +17,9 @@ The main class is ```DBMS``` contained in ```dbms_core.py```. The initialization
 
 |Name|Description|Default|Example|
 |----|-----|-------|-------|
-|```db_type```|DB connector to use||<ul><li>```mongodb```</li><li>```postgresql```</li></ul>|
-|```db_name```|Name of the DB||my_db|
+|```datasource```|Name of a default datasource.|```None```|```my_datasource```||
+|```vendor```|DB connector to use|```None```|<ul><li>```mongodb```</li><li>```postgresql```</li></ul>|
+|```db_name```|Name of the DB|```None```|my_db|
 |```username```|Username to access the DB|```None```|my_username|
 |```password```|Password to access the DB|```None```|my_password|
 |```collection_name```|Name of the collection (MongoDB only)|```None```|my_collection|
@@ -68,3 +69,47 @@ add the following record in the _tasks_ table:
 |2014|11||||
 
 Only the fields specified in the ```Dict``` have been stored in the _tasks_ table.
+
+Connect by datasource name
+--------------------------
+It is possible to connect to a default datasource with no need to send the parameters to the init function. This is particularly useful when the DB must be accessed through the REST services and it is not safe, ot at least not recomendable, to embed usernames and/or password in the URL's. Available datasources are stored in a default DB that is configured in the ```config/dbms_config.py``` file. The default datasource can be PostgreSQL, MongoDB or any vendor supported by Geobricks DBMS. The following example shows the configuration for a PostgreSQL default DB:
+```python
+config = {
+    "default_datasource": {
+        "vendor": "postgresql",
+        "db_name": "my_db",
+        "table_name": "datasources",
+        "username": "my_username",
+        "password": "my_password"
+    }
+}
+```
+These are the required field to configure a PostgreSQL default datasource:
+
+|Field Name|Field Description|Example|
+|----------|-----------------|-------|
+|````vendor```|Database vendor|```postgresql```|
+|```db_name```|Name of the DB for the connection|```my_db```|
+|```table_name```|Name of the table containing the default datasources|```datasources```|
+|```username```|Username for the connection|```my_username```|
+|```password```|Password for the connection|```my_password```|
+
+Following an example for the configuration of a MongoDB default datasource:
+```python```
+config = {
+    "default_datasource": {
+        "default_datasource": {
+            "vendor": "mongodb",
+            "db_name": "my_db",
+            "collection": "datasources"
+        }
+}
+```
+The following are the required parameters:
+
+|Field Name|Field Description|Example|
+|----------|-----------------|-------|
+|````vendor```|Database vendor|```postgresql```|
+|```db_name```|Name of the DB for the connection|```my_db```|
+|```collection```|Name of the table collection containing the default datasources|```datasources```|
+
