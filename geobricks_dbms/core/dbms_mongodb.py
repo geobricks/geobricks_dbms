@@ -41,3 +41,6 @@ class DBMSMongoDB():
 
     def find_by_id(self, item_id):
         return dumps(self.collection.find({"_id": ObjectId(item_id)}))
+
+    def find_by_field(self, field_name, field_value):
+        return dumps(self.collection.find({field_name: field_value}))

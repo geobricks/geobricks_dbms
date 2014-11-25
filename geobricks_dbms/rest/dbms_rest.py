@@ -37,3 +37,11 @@ def find_by_id(datasource, table_name, item_id):
     db = DBMS(datasource=datasource)
     out = db.find_by_id(item_id, table_name)
     return Response(json.dumps(out), content_type='application/json; charset=utf-8')
+
+
+@dbms.route('/<datasource>/<table_name>/find/field/<field_name>/<field_value>/')
+@cross_origin(origins='*')
+def find_by_field(datasource, table_name, field_name, field_value):
+    db = DBMS(datasource=datasource)
+    out = db.find_by_field(field_name, field_value, table_name)
+    return Response(json.dumps(out), content_type='application/json; charset=utf-8')

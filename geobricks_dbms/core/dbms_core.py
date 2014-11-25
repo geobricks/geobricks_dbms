@@ -92,6 +92,12 @@ class DBMS():
         elif 'postgresql' in self.vendor:
             return self.postgresql.select_by_id(table_name, item_id)
 
+    def find_by_field(self, field_name, field_value, table_name=None):
+        if 'mongodb' in self.vendor:
+            return self.mongodb.find_by_field(field_name, field_value)
+        elif 'postgresql' in self.vendor:
+            return self.postgresql.select_by_field(table_name, field_name, field_value)
+
     def insert(self, item, table_name=None):
         if 'mongodb' in self.vendor:
             return self.mongodb.insert(item)

@@ -43,9 +43,14 @@ class DBMSPostgreSQL:
         cur.execute('SELECT * FROM ' + table_name)
         return cur.fetchall()
 
-    def select_by_id(self, table_name, id):
+    def select_by_id(self, table_name, item_id):
         cur = self.connection.cursor()
-        cur.execute("SELECT * FROM " + table_name + " WHERE id = '" + id + "' ")
+        cur.execute("SELECT * FROM " + table_name + " WHERE id = '" + item_id + "' ")
+        return cur.fetchall()
+
+    def select_by_field(self, table_name, field_name, field_value):
+        cur = self.connection.cursor()
+        cur.execute("SELECT * FROM " + table_name + " WHERE " + field_name + " = '" + field_value + "' ")
         return cur.fetchall()
 
     def insert(self, table_name, item):
