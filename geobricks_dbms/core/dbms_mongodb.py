@@ -34,8 +34,8 @@ class DBMSMongoDB():
     def insert(self, item):
         return self.collection.insert(item)
 
-    def find(self):
-        return self.collection.find()
+    def find(self, query):
+        return self.collection.find(query)
 
     def find_by_id(self, item_id):
         return self.collection.find({"_id": ObjectId(item_id)})
