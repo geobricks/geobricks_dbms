@@ -43,6 +43,11 @@ class DBMSPostgreSQL:
         cur.execute('SELECT * FROM ' + table_name)
         return cur.fetchall()
 
+    def select_by_id(self, table_name, id):
+        cur = self.connection.cursor()
+        cur.execute("SELECT * FROM " + table_name + " WHERE id = '" + id + "' ")
+        return cur.fetchall()
+
     def insert(self, table_name, item):
         sql = ''
         if type(item) is DictType:

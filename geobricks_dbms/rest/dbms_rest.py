@@ -23,9 +23,17 @@ def discovery():
     return Response(json.dumps(out), content_type='application/json; charset=utf-8')
 
 
-@dbms.route('/postgresql/<db_name>/<table_name>/')
+@dbms.route('/<datasource>/<table_name>/find/all/')
 @cross_origin(origins='*')
-def list_products_service(db_name, table_name):
-    db = DBMS('postgresql', db_name, 'postgres', 'Ce09114238')
-    out = db.select_all(table_name)
+def find_all(datasource, table_name):
+    db = DBMS(datasource=datasource)
+    out = db.find_all(table_name)
+    return Response(json.dumps(out), content_type='application/json; charset=utf-8')
+
+
+@dbms.route('/<datasource>/<table_name>/find/id/<item_id>')
+@cross_origin(origins='*')
+def find_by_id(datasource, table_name, item_id):
+    db = DBMS(datasource=datasource)
+    out = db.find_by_id(item_id, table_name)
     return Response(json.dumps(out), content_type='application/json; charset=utf-8')

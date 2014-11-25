@@ -80,15 +80,17 @@ class DBMS():
             elif 'postgresql' in self.vendor:
                 self.postgresql = DBMSPostgreSQL(self.db_name, self.username, self.password)
 
-    def select_all(self, table_name=None):
+    def find_all(self, table_name=None):
         if 'mongodb' in self.vendor:
             return self.mongodb.find({})
         elif 'postgresql' in self.vendor:
             return self.postgresql.select_all(table_name)
 
-    def find_by_id(self, item_id):
+    def find_by_id(self, item_id, table_name=None):
         if 'mongodb' in self.vendor:
             return self.mongodb.find_by_id(item_id)
+        elif 'postgresql' in self.vendor:
+            return self.postgresql.select_by_id(table_name, item_id)
 
     def insert(self, item, table_name=None):
         if 'mongodb' in self.vendor:

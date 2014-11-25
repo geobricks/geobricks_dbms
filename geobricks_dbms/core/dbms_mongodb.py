@@ -1,3 +1,5 @@
+import json
+from bson.json_util import dumps
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
@@ -35,7 +37,7 @@ class DBMSMongoDB():
         return self.collection.insert(item)
 
     def find(self, query):
-        return self.collection.find(query)
+        return dumps(self.collection.find(query))
 
     def find_by_id(self, item_id):
-        return self.collection.find({"_id": ObjectId(item_id)})
+        return dumps(self.collection.find({"_id": ObjectId(item_id)}))
