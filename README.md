@@ -132,9 +132,9 @@ for row in my_db.find_all('tasks'):
 ```
 The ```test_postgresql``` datasource is stored in the default DB and, in the case of a SQL DB, it is described as follow:
 
-|id|datasource|vendor|db_name|username|password|collection|
-|--|----------|------|-------|--------|--------|----------|
-|123456|test_postgresql|postgresql|test|postgres|mypassword|```null```|
+|id    |datasource     |vendor    |db_name|username|password  |collection|
+|------|---------------|----------|-------|--------|----------|----------|
+|123456|test_postgresql|postgresql|test   |postgres|mypassword|```null```|
 
 The document for the same datasource in a NoSQL default DB is the following:
 
