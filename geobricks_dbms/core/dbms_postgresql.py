@@ -30,7 +30,6 @@ class DBMSPostgreSQL:
 
     def connect(self):
         try:
-            print self.get_connection_string()
             self.connection = psycopg2.connect(self.get_connection_string())
             self.connection.autocommit = True
         except Exception, e:
