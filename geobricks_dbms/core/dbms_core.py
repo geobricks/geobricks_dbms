@@ -17,7 +17,7 @@ class DBMS():
     mongodb = None
     postgresql = None
 
-    def __init__(self, vendor=None, db_name=None, datasource=None, username=None, password=None, collection_name=None):
+    def __init__(self, vendor=None, db_name=None, datasource=None, username=None, password=None, collection_name=None, schema="public"):
 
         # Store user's parameters.
         self.vendor = vendor
@@ -26,6 +26,7 @@ class DBMS():
         self.password = password
         self.collection_name = collection_name
         self.datasource = datasource
+        self.schema = schema
 
         # Connect to the DB
         self.connect()
