@@ -23,6 +23,7 @@ The main class is ```DBMS``` contained in ```dbms_core.py```. The initialization
 |```username```|Username to access the DB|```None```|my_username|
 |```password```|Password to access the DB|```None```|my_password|
 |```collection_name```|Name of the collection (MongoDB only)|```None```|my_collection|
+|```schema```|Name of the schema (PostgreSQL only)|```None```|my_schema|
 
 Once initialized the ```DBMS``` class provides a set of CRUD methods as discussed in the following sections.
 
