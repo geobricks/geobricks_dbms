@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='GeobricksDBMS',
-    version='0.1.1',
+    version='0.1.2',
     author='Simone Murzilli; Guido Barbaglia',
     author_email='geobrickspy@gmail.com',
     packages=find_packages(),
@@ -11,7 +11,10 @@ setup(
     long_description=open('README.md').read(),
     description='Geobricks DB Management System.',
     install_requires=[
-        'pymongo', 'flask'
+        'flask',
+        'flask-cors',
+        'pymongo',
+        'psycopg2'
     ],
     url='http://pypi.python.org/pypi/GeobricksDBMS/'
 )

@@ -1,2 +1,3 @@
 v0.1.0, 24-11-2014 -- Initial release.
 v0.1.1, 25-11-2014 -- Query by datasource name.
+v0.1.2, 01-11-2014 -- Added missing dependencies.
