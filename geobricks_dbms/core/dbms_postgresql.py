@@ -28,6 +28,19 @@ class DBMSPostgreSQL:
         # Connect to the DB
         self.connect()
 
+    def __init__(self, db_settings):
+
+        # Store user parameters.
+        self.db_name = db_settings["dbname"]
+        self.username = db_settings["username"]
+        self.password = db_settings["password"]
+        self.host = "localhost" if "host" not in db_settings else db_settings["host"]
+        self.port = 5432 if "port" not in db_settings else db_settings["port"]
+        self.schema = "public" if "schema" not in db_settings else db_settings["schema"]
+
+        # Connect to the DB
+        self.connect()
+
     def connect(self):
         try:
             self.connection = psycopg2.connect(self.get_connection_string())
