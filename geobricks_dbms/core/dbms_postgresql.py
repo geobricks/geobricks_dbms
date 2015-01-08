@@ -1,3 +1,4 @@
+import simplejson
 import psycopg2
 from types import DictType
 
@@ -48,28 +49,54 @@ class DBMSPostgreSQL:
         except Exception, e:
             raise Exception('Unable to connect to the DB. ' + str(e))
 
-    def query(self, sql):
+    def query(self, sql, output_json=False):
         if self.check_query(sql):
             cur = self.connection.cursor()
             cur.execute(sql)
-            return cur.fetchall()
+            rows = cur.fetchall()
+            if output_json:
+                return simplejson.dumps(rows)
+            return rows
         else:
             raise Exception("Query not allowed: " + sql)
 
-    def select_all(self, table_name):
+    def query(self, select, table, where, output_json=False):
+        sql = "SELECT " + select + " FROM " + table
+        if where is not None:
+            sql += " WHERE " + where
+        if self.check_query(sql):
+            cur = self.connection.cursor()
+            cur.execute(sql)
+            rows = cur.fetchall()
+            if output_json:
+                return simplejson.dumps(rows)
+            return rows
+        else:
+            raise Exception("Query not allowed: " + sql)
+
+    def select_all(self, table_name, output_json=False):
         cur = self.connection.cursor()
         cur.execute('SELECT * FROM ' + table_name)
-        return cur.fetchall()
+        rows = cur.fetchall()
+        if output_json:
+            return simplejson.dumps(rows)
+        return rows
 
-    def select_by_id(self, table_name, item_id):
+    def select_by_id(self, table_name, item_id, output_json=False):
         cur = self.connection.cursor()
         cur.execute("SELECT * FROM " + table_name + " WHERE id = '" + item_id + "' ")
-        return cur.fetchall()
+        rows = cur.fetchall()
+        if output_json:
+            return simplejson.dumps(rows)
+        return rows
 
-    def select_by_field(self, table_name, field_name, field_value):
+    def select_by_field(self, table_name, field_name, field_value, output_json=False):
         cur = self.connection.cursor()
         cur.execute("SELECT * FROM " + table_name + " WHERE " + field_name + " = '" + field_value + "' ")
-        return cur.fetchall()
+        rows = cur.fetchall()
+        if simplejson:
+            return simplejson.dumps(rows)
+        return rows
 
     def insert(self, table_name, item):
         sql = ''

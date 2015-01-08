@@ -14,7 +14,8 @@ setup(
         'flask',
         'flask-cors',
         'pymongo',
-        'psycopg2'
+        'psycopg2',
+        'simplejson'
     ],
     url='http://pypi.python.org/pypi/GeobricksDBMS/'
 )
