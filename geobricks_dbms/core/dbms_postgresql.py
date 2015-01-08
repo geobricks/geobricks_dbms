@@ -60,7 +60,7 @@ class DBMSPostgreSQL:
         else:
             raise Exception("Query not allowed: " + sql)
 
-    def query(self, select, table, where, output_json=False):
+    def query_extented(self, select, table, where, output_json=False):
         sql = "SELECT " + select + " FROM " + table
         if where is not None:
             sql += " WHERE " + where
