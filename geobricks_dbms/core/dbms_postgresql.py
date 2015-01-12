@@ -46,6 +46,12 @@ class DBMSPostgreSQL:
         try:
             self.connection = psycopg2.connect(self.get_connection_string())
             self.connection.autocommit = True
+
+            # set search_path to a specific schema
+            if self.schema is not "public" and self.schema is not None:
+                search_path = "SET search_path TO %s, public" % self.schema
+                self.connection.cursor().execute(search_path)
+                self.connection.commit()
         except Exception, e:
             raise Exception('Unable to connect to the DB. ' + str(e))
 
@@ -119,6 +125,7 @@ class DBMSPostgreSQL:
         db_connection_string = ""
         if add_pg is True:
             db_connection_string += "PG:"
+            db_connection_string += "schemas='public,%s' " % self.schema
         db_connection_string += "host='%s' port=%s dbname='%s' user='%s' password='%s'" % (self.host, self.port, self.db_name, self.username, self.password)
         return db_connection_string
 
