@@ -3,3 +3,4 @@ v0.1.1, 25-11-2014 -- Query by datasource name.
 v0.1.2, 01-11-2014 -- Added missing dependencies.
 v0.1.3, 12-11-2014 -- Added missing dependencies.
 v0.1.4, 13-01-2015 -- Minor fixes.
+v0.1.5, 13-01-2015 -- Added watchdog dependency.
