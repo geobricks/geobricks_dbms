@@ -11,12 +11,12 @@ setup(
     long_description=open('README.md').read(),
     description='Geobricks DB Management System.',
     install_requires=[
-        'watchdog',
-        'flask',
-        'flask-cors',
-        'pymongo',
-        'psycopg2',
-        'simplejson'
+        # 'watchdog',
+        # 'flask',
+        # 'flask-cors',
+        # 'pymongo',
+        # 'psycopg2',
+        # 'simplejson'
     ],
     url='http://pypi.python.org/pypi/GeobricksDBMS/'
 )
