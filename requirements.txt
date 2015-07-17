@@ -1,0 +1,6 @@
+watchdog
+flask
+flask-cors
+simplejson
+psycopg2
+pymongo
