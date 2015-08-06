@@ -5,18 +5,6 @@ from pymongo import MongoClient
 
 class DBMSMongoDB():
 
-    # TODO: this variables here are shared by all instances and are errors.
-    # User's parameters
-    # host = None
-    # port = None
-    # db_name = None
-    # collection_name = None
-    #
-    # # Computed variables.
-    # client = None
-    # db = None
-    # collection = None
-
     def __init__(self, db_name, collection_name, host='localhost', port=27017):
 
         # Store user's settings
