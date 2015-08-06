@@ -6,16 +6,17 @@ from geobricks_dbms.config.dbms_config import config
 class DBMS():
 
     # User's parameters.
-    vendor = None
-    db_name = None
-    username = None
-    password = None
-    collection_name = None
-    datasource = None
-
-    # Computed parameters
-    mongodb = None
-    postgresql = None
+    # TODO: this variables here are shared by all instances and are errors.
+    # vendor = None
+    # db_name = None
+    # username = None
+    # password = None
+    # collection_name = None
+    # datasource = None
+    #
+    # # Computed parameters
+    # mongodb = None
+    # postgresql = None
 
     def __init__(self, vendor=None, db_name=None, datasource=None, username=None, password=None, collection_name=None):
 

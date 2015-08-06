@@ -6,15 +6,16 @@ from types import DictType
 class DBMSPostgreSQL:
 
     # User's parameters
-    db_name = None
-    username = None
-    password = None
-    host = None
-    port = None
-    schema = None
-
-    # Computed variables.
-    connection = None
+    # TODO: this variables here are shared by all instances and are errors.
+    # db_name = None
+    # username = None
+    # password = None
+    # host = None
+    # port = None
+    # schema = None
+    #
+    # # Computed variables.
+    # connection = None
 
     def __init__(self, db_name, username, password, host='localhost', port=5432, schema="public"):
 

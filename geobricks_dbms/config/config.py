@@ -17,13 +17,7 @@ config = {
                 "host": "localhost",
                 "port": "5432",
                 "username": "postgres",
-                "password": "",
-                "schema": "spatial",
-                "tables": {
-                    "country": {
-                        "table": "ne_110m_admin_0_countries"
-                    }
-                }
+                "password": ""
             }
         }
     }
